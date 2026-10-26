@@ -10,9 +10,9 @@ git clone --branch guardd-2 https://github.com/vfalico/orka-public.git orka
 git clone --branch guardd-2 https://github.com/vfalico/kaimahi-public.git kaimahi
 git clone --branch guardd-2 https://github.com/vfalico/agentsuite-guardd-public.git guardd
 
-git -C orka switch --detach 447136b54f43eff6afbac3e2be3042b9ab62697d
-git -C kaimahi switch --detach ae31c47976908a02f7bebef9068e081c340c3d8a
-git -C guardd switch --detach ae95dc0fb066dc6895c33d1da54fbc8881a89ca5
+git -C orka switch --detach e53dd073cb11b36263f4ad09e26623eb213cc2f8
+git -C kaimahi switch --detach aa106fd382de9fee2fee7397ad6044250c02a152
+git -C guardd switch --detach 2a4354af5ecf18198275f0501154c9d578a23ba4
 ```
 
 Put this guide alongside those directories, then run:
@@ -21,9 +21,10 @@ Put this guide alongside those directories, then run:
 python3 guardd-2-integration-public/tools/verify-source.py --root .
 ```
 
-The verifier checks tracked cleanliness, exact tip/tree, ancestry and every
-ordered series commit. It does not run tests, inspect ignored build outputs,
-verify a binary or establish live enforcement.
+The verifier checks tracked cleanliness, exact tip/tree, ancestry, every
+ordered series commit and the [commit policy](../CONTRIBUTING.md). It does not
+run tests, inspect ignored build outputs, verify a binary or establish live
+enforcement.
 
 Preserve canonical Go module paths. A fork URL is a source/review location,
 not a reason to rewrite imports. Do not push to an upstream repository or open
@@ -33,8 +34,8 @@ an upstream PR merely because these commits are structured for review.
 
 | Orka commit | Purpose | Applicability |
 | --- | --- | --- |
-| `7d2204c2b020d34580876a77e66ec401bc7bc745` | Fall back when Responses rejects tool use before any output. | Ordinary compatibility fix; no Guardd or enforcement provider required. |
-| `313485c4dafc6dcc792dd09f823e87f0a670e61b` | Retire an exact cancelled standalone reservation without waiting for a nonexistent session acknowledgement. | Ordinary lifecycle fix; independent of the first fix and of Guardd. |
+| `3b664ab0f289587be0562b6e70901dd000f299de` | Fall back when Responses rejects tool use before any output. | Ordinary compatibility fix; no Guardd or enforcement provider required. |
+| `ec5a41e8bbed368fb7d838bbbbb0570cd39e788d` | Retire an exact cancelled standalone reservation without waiting for a nonexistent session acknowledgement. | Ordinary lifecycle fix; independent of the first fix and of Guardd. |
 
 Inspect each with `git -C orka show <commit>`. For a standalone trial, use a
 separate review copy at Orka baseline
@@ -65,10 +66,10 @@ prefixes preserve a protected request but refuse dispatch until the complete
 controller integration arrives; they do not temporarily run it unprotected.
 
 Guardd's baseline is
-`28431c3e0b6184b628ba991df4e562c604c28967`. Its history retains:
+`75fead512389cdbe37d766c875089ce8fd485505`. Its history retains:
 
-1. `a7d3fdc`: whole-requirement reference PoC.
-2. `28431c3`: held-native filesystem deny-write exposure.
+1. `4bc4d1e`: whole-requirement reference PoC.
+2. `75fead5`: held-native filesystem deny-write exposure.
 
 Those prerequisites follow the preserved source repository's public
 `499462908370d8f62543b8e93fa35f6fb93cb4ae`. They are visible baseline history,
@@ -81,9 +82,9 @@ Use the manifest's baseline for each project:
 ```sh
 mkdir orka-patches
 git -C orka format-patch --output-directory ../orka-patches \
-  2026da6ad6e890070de4b28309d478319bc28cb7..447136b54f43eff6afbac3e2be3042b9ab62697d
+  2026da6ad6e890070de4b28309d478319bc28cb7..e53dd073cb11b36263f4ad09e26623eb213cc2f8
 git -C orka diff --stat \
-  2026da6ad6e890070de4b28309d478319bc28cb7..447136b54f43eff6afbac3e2be3042b9ab62697d
+  2026da6ad6e890070de4b28309d478319bc28cb7..e53dd073cb11b36263f4ad09e26623eb213cc2f8
 ```
 
 Repeat with the corresponding Guardd/Kaimahi baseline and tip. `git am` onto

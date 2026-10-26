@@ -29,7 +29,21 @@ def main():
         actual = git("rev-list", "--reverse", expected["baseline"] + "..HEAD").splitlines()
         if actual != [entry["commit"] for entry in expected["series"]]:
             raise SystemExit(f"{name}: ordered review series differs")
-        print(f"{name}: exact tested source/tree and {len(actual)} ordered commits verified")
+        commits = [entry["commit"] for entry in expected.get("baselinePrerequisites", [])] + actual
+        for commit in commits:
+            author = git("show", "-s", "--format=%an <%ae>", commit)
+            committer = git("show", "-s", "--format=%cn <%ce>", commit)
+            signoffs = git("show", "-s", "--format=%(trailers:key=Signed-off-by,valueonly)", commit).splitlines()
+            assistant_trailers = git(
+                "show", "-s", "--format=%(trailers:key=Copilot-Session)", commit)
+            coauthors = git(
+                "show", "-s", "--format=%(trailers:key=Co-authored-by,valueonly)", commit)
+            if author not in signoffs:
+                raise SystemExit(f"{name}: {commit} lacks its author's DCO sign-off")
+            if (assistant_trailers or "copilot" in coauthors.lower()
+                    or "copilot" in (author + committer + "\n".join(signoffs)).lower()):
+                raise SystemExit(f"{name}: {commit} contains assistant attribution")
+        print(f"{name}: exact tracked tree, {len(actual)} ordered commits and DCO policy verified")
     print("Source identity only; no binary, image, test or live-enforcement claim.")
 
 

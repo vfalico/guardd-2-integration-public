@@ -20,6 +20,10 @@ the filesystem-only AgentPolicy integration described by the predecessor guide.
 [Qualification](docs/qualification.md) distinguishes actual results from
 unresolved observations. [`release-manifest.json`](release-manifest.json)
 contains the exact source commits and trees: branch names alone are not pins.
+The [commit policy](CONTRIBUTING.md) requires contributor DCO sign-offs and
+prohibits assistant-attribution/session trailers. The current pins reflect an
+owner-authorized metadata-only replacement; all source trees and patch payloads
+are unchanged, with original qualified IDs retained in the manifest/map.
 
 ## Review shape
 

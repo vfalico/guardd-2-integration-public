@@ -2,8 +2,9 @@
 
 ## Exact source and artifacts
 
-`release-manifest.json` records the tested baseline, ordered commits, final
-tree, CLI/chart hashes and all six locally built image manifest/config digests.
+`release-manifest.json` records the current published baseline/ordered commits,
+the exact qualified trees, original qualified IDs before the DCO-only metadata
+replacement, CLI/chart hashes and all six locally built image manifest/config digests.
 The five Orka images and Guardd provider were built from the actual fresh
 integrated sources, imported privately and checked against live container
 identities. They are **not published images** or an image download catalog.
