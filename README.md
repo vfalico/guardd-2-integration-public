@@ -8,6 +8,20 @@ provider-neutral, fail-closed container-enforcement boundary.
 Both filesystem and network requirements are submitted together. They are not
 the filesystem-only AgentPolicy integration described by the predecessor guide.
 
+## Upstream review
+
+The series was submitted for upstream review on 2026-10-27:
+
+- [orka-agents/orka#952](https://github.com/orka-agents/orka/pull/952):
+  optional container enforcement for native and managed ACP Tasks.
+- [kaimahi-agents/kaimahi#781](https://github.com/kaimahi-agents/kaimahi/pull/781):
+  enforcement requirement authoring and observations in native Run and Chat.
+
+The [response to Sertac on the original RFC](https://github.com/orka-agents/orka/pull/831#issuecomment-6436965569)
+summarizes how the implementation addresses his feedback and links both PRs.
+
+Source branches and responsibilities:
+
 | Repository | Review branch | Responsibility |
 | --- | --- | --- |
 | [vfalico/kaimahi-public](https://github.com/vfalico/kaimahi-public/tree/guardd-2) | `guardd-2` | Verified local candidate installation; native evaluation/digest Deploy; complete Run/Chat requirement forwarding and safe observations. |

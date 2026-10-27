@@ -1,5 +1,18 @@
 # Review map
 
+## Upstream review
+
+The submitted review entry points are:
+
+- [orka-agents/orka#952](https://github.com/orka-agents/orka/pull/952):
+  native and managed ACP Task admission and enforcement integration.
+- [kaimahi-agents/kaimahi#781](https://github.com/kaimahi-agents/kaimahi/pull/781):
+  native Run/Chat requirement authoring, forwarding and observations.
+
+See the [posted response to Sertac](https://github.com/orka-agents/orka/pull/831#issuecomment-6436965569)
+on the original RFC for the approach and its relationship to his feedback.
+The pinned source and qualification boundaries below remain unchanged.
+
 ## Fetch pinned source, without touching upstream
 
 Run these commands in a new directory. Only owner-controlled public
@@ -118,5 +131,5 @@ manifest retains the actual built/exercised sources separately from the later
 Kaimahi review refresh. That refresh has hermetic verification, not new live
 E2E qualification.
 
-Review feedback, RFCs and future upstream submission are separate decisions.
-This publication itself creates no upstream branch, issue or pull request.
+Upstream review takes place in the linked PRs. The reproduction commands above
+remain read-only: they do not publish branches, issues or additional PRs.
