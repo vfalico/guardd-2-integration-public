@@ -21,10 +21,11 @@ the filesystem-only AgentPolicy integration described by the predecessor guide.
 unresolved observations. [`release-manifest.json`](release-manifest.json)
 contains the exact source commits and trees: branch names alone are not pins.
 The [commit policy](CONTRIBUTING.md) requires contributor DCO sign-offs and
-prohibits assistant-attribution/session trailers. The current pins reflect
-owner-authorized DCO and commit-message-only replacements; all source trees
-and patch payloads are unchanged. Original qualified IDs and both rewrite
-generations are retained in the manifest and maps.
+prohibits assistant-attribution/session trailers and repeated message scaffolding.
+The historical DCO/message-only replacements preserve source and patch payloads;
+both maps remain intact. Kaimahi's current review branch additionally integrates
+fresh main. Its original qualified snapshot is retained separately in the
+manifest and the `guardd-2-qualified-20261026` tag, not relabeled as the refresh.
 
 ## Review shape
 
@@ -35,12 +36,21 @@ to be independently deployable. Guardd's new `main` additionally retains two
 baseline prerequisites, listed separately in the manifest rather than hidden
 inside the seven-commit count.
 
-Fresh read-only upstream mains were integrated before qualification:
+The read-only upstream mains integrated before the original qualification were:
 Orka `2026da6ad6e890070de4b28309d478319bc28cb7` and
 Kaimahi `7959afdce64e262417ed214c5b1dd26af1456d1a`.
 Upstream additions, including AgentHost functionality, were preserved. This is
 qualification of these exact snapshots plus the series, not a promise about
 whatever an upstream branch points to later.
+
+Kaimahi's current review series is now based on
+`3a0ab5695201e088acda79a4f4981f8e40da1cb2`, at tip
+`019e0de701c1a3ab32149c53dfe08db830b2af94`. Six patches are unchanged; the
+CLI patch preserves the updated upstream FILE command semantics and adds
+behavioral refusal checks and its release note. Focused tests, vet and the
+CLI build passed. This refresh is not a new live E2E qualification; the
+artifact digests and demonstrations below remain tied to the manifest's
+explicit historical qualified source trees.
 
 ## Actual pre-publication results
 

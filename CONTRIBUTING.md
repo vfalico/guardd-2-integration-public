@@ -36,10 +36,16 @@ every intermediate source tree and every binary patch payload are unchanged.
 [`commit-rewrite-map.json`](commit-rewrite-map.json) preserves that first
 replacement. The subsequent
 [`commit-message-cleanup-map.json`](commit-message-cleanup-map.json) maps those
-published identities to the current commits after removing repeated message
+published identities to the cleaned commits after removing repeated message
 scaffolding. Both replacements preserve source trees and binary patch payloads.
 
-The manifest keeps the original qualified source identities as provenance
-alongside the current published tips. Existing real E2E results are reused
-because the source/payload identity was checked, not relabeled as new tests.
-Git-derived build metadata and a Git-archive envelope can still differ.
+The manifest keeps original qualified identities alongside current review tips.
+Existing E2E results remained applicable to those metadata-only replacements
+because source/payload identity was checked. Git-derived build metadata and a
+Git-archive envelope can still differ.
+
+The subsequent Kaimahi refresh is a sourceful integration of newer main, not
+another metadata-only replacement. Its current source pins and hermetic
+verification are separate from `qualifiedReviewSnapshot` and the historical
+artifacts' `qualifiedSourceTrees`. Do not extend the earlier E2E claim to that
+new tree merely because six feature patches are unchanged.

@@ -2,9 +2,9 @@
 
 ## Exact source and artifacts
 
-`release-manifest.json` records the current published baseline/ordered commits,
-the exact qualified trees, original qualified IDs before the DCO-only metadata
-replacement, CLI/chart hashes and all six locally built image manifest/config digests.
+`release-manifest.json` records current review baselines/ordered commits and,
+separately, historical qualified trees, original qualified IDs before the
+metadata replacements, CLI/chart hashes and all six locally built image manifest/config digests.
 The five Orka images and Guardd provider were built from the actual fresh
 integrated sources, imported privately and checked against live container
 identities. They are **not published images** or an image download catalog.
@@ -23,6 +23,27 @@ candidate source. A source hash alone was not treated as binary identity.
 The lab upgrade preserved all 211 pre-existing protected UID/spec
 fingerprints. The current upstream AgentHost CRDs/schema additions were
 retained, not deleted to make older manifests fit.
+
+## Current Kaimahi review refresh
+
+The current Kaimahi review tip is
+`019e0de701c1a3ab32149c53dfe08db830b2af94`, based on upstream main
+`3a0ab5695201e088acda79a4f4981f8e40da1cb2`. Six feature patches are
+unchanged. The CLI patch preserves upstream FILE argument/content semantics
+and usage-error behavior, and adds refusal regressions plus a release note.
+
+Linux/amd64 checks with Go 1.26.10 and process-scoped `umask 022` passed
+153 top-level tests and 393 subtests across the CLI, App and Orka runview
+packages. Focused vet and a CLI build/version check also passed. The earlier
+journal refusals came from group-writable test-fixture parents under the
+workstation's inherited `0002` mask; no product check was weakened.
+
+These are hermetic refresh results, not fresh live E2E. The original Kaimahi
+qualified source remains at tag `guardd-2-qualified-20261026`, tip
+`09e6c052b21334bc28267e623b73ab96f400a749`, tree
+`1a878a0df991a9f2471e71266ebd71e3ef69c655`. All artifact digests and live
+demonstrations below remain bound to `observedArtifacts.qualifiedSourceTrees`,
+not the newer Kaimahi review tree.
 
 ## Fresh actual journeys
 

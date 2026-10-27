@@ -11,7 +11,7 @@ git clone --branch guardd-2 https://github.com/vfalico/kaimahi-public.git kaimah
 git clone --branch guardd-2 https://github.com/vfalico/agentsuite-guardd-public.git guardd
 
 git -C orka switch --detach aaed0ef89d78207d4ae66192ba432b7707e6321c
-git -C kaimahi switch --detach 09e6c052b21334bc28267e623b73ab96f400a749
+git -C kaimahi switch --detach 019e0de701c1a3ab32149c53dfe08db830b2af94
 git -C guardd switch --detach 73e7576b8382ded9d593d921cf4b12c55c0b997e
 ```
 
@@ -25,6 +25,18 @@ The verifier checks tracked cleanliness, exact tip/tree, ancestry, every
 ordered series commit and the [commit policy](../CONTRIBUTING.md). It does not
 run tests, inspect ignored build outputs, verify a binary or establish live
 enforcement.
+
+Kaimahi's review baseline is now
+`3a0ab5695201e088acda79a4f4981f8e40da1cb2`. Its seven commits preserve six
+feature patches unchanged; the CLI patch integrates current FILE semantics,
+refusal regressions and a release-note fragment. See
+[qualification](qualification.md#current-kaimahi-review-refresh) for the exact
+boundary between fresh hermetic checks and historical live E2E evidence.
+
+For the original qualified Kaimahi sources, use a separate clone and select
+`guardd-2-qualified-20261026`. Its exact tip and tree are recorded under
+`projects.kaimahi.qualifiedReviewSnapshot`. The verifier above checks current
+review pins, not that historical checkout.
 
 Preserve canonical Go module paths. A fork URL is a source/review location,
 not a reason to rewrite imports. Do not push to an upstream repository or open
@@ -102,7 +114,9 @@ exactly, including comments, modes, symlinks and unchanged files. This
 publication subsequently integrated fresh mains and ran new E2E. It does not
 claim that the newer whole Orka/Kaimahi trees equal the older frozen trees.
 Additive conflict resolutions preserve fresh upstream functionality; the
-manifest identifies the actual newly built and exercised sources.
+manifest retains the actual built/exercised sources separately from the later
+Kaimahi review refresh. That refresh has hermetic verification, not new live
+E2E qualification.
 
 Review feedback, RFCs and future upstream submission are separate decisions.
 This publication itself creates no upstream branch, issue or pull request.

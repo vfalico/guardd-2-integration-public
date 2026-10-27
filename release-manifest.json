@@ -1,7 +1,8 @@
 {
   "schemaVersion": 1,
   "integration": "guardd-2",
-  "sourceObservedDate": "2026-10-26",
+  "sourceObservedDate": "2026-10-27",
+  "qualifiedSourceObservedDate": "2026-10-26",
   "qualification": "profile-bound; see docs/qualification.md; not a signed attestation or production release",
   "projects": {
     "guardd": {
@@ -120,48 +121,64 @@
     "kaimahi": {
       "repository": "https://github.com/vfalico/kaimahi-public.git",
       "branch": "guardd-2",
-      "mainAtPublication": "7959afdce64e262417ed214c5b1dd26af1456d1a",
-      "baseline": "7959afdce64e262417ed214c5b1dd26af1456d1a",
-      "tip": "09e6c052b21334bc28267e623b73ab96f400a749",
-      "tree": "1a878a0df991a9f2471e71266ebd71e3ef69c655",
+      "mainAtPublication": "3a0ab5695201e088acda79a4f4981f8e40da1cb2",
+      "baseline": "3a0ab5695201e088acda79a4f4981f8e40da1cb2",
+      "tip": "019e0de701c1a3ab32149c53dfe08db830b2af94",
+      "tree": "73d29d0ace8448335ab06c52731a28197418989f",
       "series": [
         {
-          "commit": "013271ab97ba54463ce63266a8064f133c33cd24",
+          "commit": "aaad489ddf291907b4f4796ac729abcfa632810f",
           "subject": "runview: project safe typed enforcement observations"
         },
         {
-          "commit": "f2070a7084dc6245df7df2556054484c4d68980b",
+          "commit": "bb0425cd5e80c2a6c572a616074e011b374aafbc",
           "subject": "orka: verify local installers and retain enrollment and result authority"
         },
         {
-          "commit": "5f21b566c84992afcefbe1b991a88f5ad98f9bcf",
+          "commit": "7e07374498ca87c307498b4f3ee7f0393bb823ca",
           "subject": "suite: bind candidate evaluation and deploy to the selected Orka images"
         },
         {
-          "commit": "2434437807634871e224a0de2d1edb595648a13f",
+          "commit": "598ed1de32b1aac129431b2ba848c81fe00d8109",
           "subject": "task: forward immutable requirements through native Run and Chat"
         },
         {
-          "commit": "de041b896a31bb9d29ff5c4a4dbba9886b2fdf74",
+          "commit": "d0d76a53eda5812afdb8410c575131decd3325c8",
           "subject": "quickstart: share verified setup and preserve Task namespace placement"
         },
         {
-          "commit": "8b78dd9b978f66c516a1d14c77e214e6e77b0a0c",
+          "commit": "3d5e12dfa246f574bb884aca74effbf1c866ba51",
           "subject": "cli: expose explicit candidate and enforcement flags on complete workflows"
         },
         {
-          "commit": "09e6c052b21334bc28267e623b73ab96f400a749",
+          "commit": "019e0de701c1a3ab32149c53dfe08db830b2af94",
           "subject": "docs: explain optional enrollment and complete Task requirement authoring"
         }
       ],
       "qualifiedSourceTipBeforeMetadataRewrite": "ae31c47976908a02f7bebef9068e081c340c3d8a",
       "qualifiedBaselineBeforeMetadataRewrite": "7959afdce64e262417ed214c5b1dd26af1456d1a",
-      "publishedTipBeforeMessageCleanup": "aa106fd382de9fee2fee7397ad6044250c02a152"
+      "publishedTipBeforeMessageCleanup": "aa106fd382de9fee2fee7397ad6044250c02a152",
+      "qualifiedReviewSnapshot": {
+        "baseline": "7959afdce64e262417ed214c5b1dd26af1456d1a",
+        "tip": "09e6c052b21334bc28267e623b73ab96f400a749",
+        "tree": "1a878a0df991a9f2471e71266ebd71e3ef69c655",
+        "tag": "guardd-2-qualified-20261026"
+      },
+      "reviewRefresh": {
+        "date": "2026-10-27",
+        "sourceChange": "Six feature patches unchanged; CLI patch preserves fresh upstream FILE semantics and adds refusal regressions and its release note.",
+        "verification": "Linux/amd64, Go 1.26.10, umask 022: 153 top-level tests and 393 subtests passed; focused vet and CLI build/version passed. Not fresh live E2E qualification."
+      }
     }
   },
   "observedArtifacts": {
     "platform": "linux/amd64",
     "publicImages": false,
+    "qualifiedSourceTrees": {
+      "orka": "b0b7f8f0f49764c8678bdd0066473b4e69459ede",
+      "guardd": "7f4948c5b0dfd8530148d9f2c105bce6abdf3822",
+      "kaimahi": "1a878a0df991a9f2471e71266ebd71e3ef69c655"
+    },
     "images": {
       "acp-opencode-runtime": {
         "manifestDigest": "sha256:54aab5cb1d6720891e8fb2d66fcd37be416189525a4983efa3e19f531ae3949b",
@@ -190,7 +207,7 @@
     },
     "CLI_SHA256": "904288a7c264961b713d864ed0173fbaccd0df7c9cfbb0a5b6de3c647d8c955a",
     "chartSHA256": "a541e4728713584bfd50fd625a7794c49c8da10b01780c15bbe5feb0844132de",
-    "note": "Private built artifacts were exercised, not published; source equality does not guarantee identical rebuild digests."
+    "note": "Private built artifacts were exercised, not published. These digests belong to qualifiedSourceTrees, not the refreshed Kaimahi review tree; rebuilds need not reproduce the digests."
   },
   "nativeModel": {
     "model": "qwen2.5:3b",
@@ -212,6 +229,7 @@
     "Public summaries are sanitized; private raw evidence is not distributed."
   ],
   "commitMetadataPolicy": {
+    "scope": "Metadata-only replacements recorded in the two maps; excludes the sourceful Kaimahi review refresh.",
     "DCO": "required, matching responsible contributor author",
     "assistantAttributionTrailers": "prohibited",
     "sourcePayloadsUnchanged": true,

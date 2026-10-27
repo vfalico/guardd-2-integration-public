@@ -15,6 +15,15 @@ needs BTF/bpftool, clang and the source's libbpf/runtime dependencies.
 Follow each pinned component's dependency manifests rather than substituting
 unverified executable downloads.
 
+The clone/source-verifier instructions select the current review sources.
+To reproduce the historical live-qualified Kaimahi source instead, use a
+separate clone at `guardd-2-qualified-20261026` and compare its HEAD/tree to
+`projects.kaimahi.qualifiedReviewSnapshot`. The manifest's observed artifact
+hashes belong to the explicitly recorded qualified trees, not the newer
+Kaimahi review tree. The refreshed Kaimahi-only checks/build used Go 1.26.10;
+follow each component's pinned toolchain rather than inferring a tested
+compiler from another component's build.
+
 Build on an explicitly capped builder if the host is shared. Capping only
 the Docker client does not cap BuildKit's daemon processes. Keep credentials
 and runtime state outside source/build contexts.
