@@ -10,9 +10,9 @@ git clone --branch guardd-2 https://github.com/vfalico/orka-public.git orka
 git clone --branch guardd-2 https://github.com/vfalico/kaimahi-public.git kaimahi
 git clone --branch guardd-2 https://github.com/vfalico/agentsuite-guardd-public.git guardd
 
-git -C orka switch --detach e53dd073cb11b36263f4ad09e26623eb213cc2f8
-git -C kaimahi switch --detach aa106fd382de9fee2fee7397ad6044250c02a152
-git -C guardd switch --detach 2a4354af5ecf18198275f0501154c9d578a23ba4
+git -C orka switch --detach aaed0ef89d78207d4ae66192ba432b7707e6321c
+git -C kaimahi switch --detach 09e6c052b21334bc28267e623b73ab96f400a749
+git -C guardd switch --detach 73e7576b8382ded9d593d921cf4b12c55c0b997e
 ```
 
 Put this guide alongside those directories, then run:
@@ -34,8 +34,8 @@ an upstream PR merely because these commits are structured for review.
 
 | Orka commit | Purpose | Applicability |
 | --- | --- | --- |
-| `3b664ab0f289587be0562b6e70901dd000f299de` | Fall back when Responses rejects tool use before any output. | Ordinary compatibility fix; no Guardd or enforcement provider required. |
-| `ec5a41e8bbed368fb7d838bbbbb0570cd39e788d` | Retire an exact cancelled standalone reservation without waiting for a nonexistent session acknowledgement. | Ordinary lifecycle fix; independent of the first fix and of Guardd. |
+| `cd0c8ff44310c6180709a55868b4a7686dd1f64c` | Fall back when Responses rejects tool use before any output. | Ordinary compatibility fix; no Guardd or enforcement provider required. |
+| `8e11b57868e13d1baa1b6bbbe90aea9fd617c568` | Retire an exact cancelled standalone reservation without waiting for a nonexistent session acknowledgement. | Ordinary lifecycle fix; independent of the first fix and of Guardd. |
 
 Inspect each with `git -C orka show <commit>`. For a standalone trial, use a
 separate review copy at Orka baseline
@@ -46,6 +46,9 @@ or responses that have already produced output.
 ## Then review the feature series
 
 The exact ordered commit IDs and subjects are in `release-manifest.json`.
+Messages contain change-specific rationale, not repeated dependency,
+validation or limitation boilerplate. This review map owns series dependencies;
+the qualification document owns the evidence and its boundaries.
 
 | Slice | Review responsibility and dependencies |
 | --- | --- |
@@ -82,9 +85,9 @@ Use the manifest's baseline for each project:
 ```sh
 mkdir orka-patches
 git -C orka format-patch --output-directory ../orka-patches \
-  2026da6ad6e890070de4b28309d478319bc28cb7..e53dd073cb11b36263f4ad09e26623eb213cc2f8
+  2026da6ad6e890070de4b28309d478319bc28cb7..aaed0ef89d78207d4ae66192ba432b7707e6321c
 git -C orka diff --stat \
-  2026da6ad6e890070de4b28309d478319bc28cb7..e53dd073cb11b36263f4ad09e26623eb213cc2f8
+  2026da6ad6e890070de4b28309d478319bc28cb7..aaed0ef89d78207d4ae66192ba432b7707e6321c
 ```
 
 Repeat with the corresponding Guardd/Kaimahi baseline and tip. `git am` onto

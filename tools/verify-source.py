@@ -21,7 +21,7 @@ def main():
         if git("status", "--porcelain"):
             raise SystemExit(f"{name}: working tree has changes")
         if git("rev-parse", "HEAD") != expected["tip"]:
-            raise SystemExit(f"{name}: HEAD differs from the tested tip")
+            raise SystemExit(f"{name}: HEAD differs from the pinned review tip")
         if git("rev-parse", "HEAD^{tree}") != expected["tree"]:
             raise SystemExit(f"{name}: tracked tree differs")
         subprocess.run(["git", "-C", str(repository), "merge-base", "--is-ancestor",
@@ -31,6 +31,10 @@ def main():
             raise SystemExit(f"{name}: ordered review series differs")
         commits = [entry["commit"] for entry in expected.get("baselinePrerequisites", [])] + actual
         for commit in commits:
+            message = git("show", "-s", "--format=%B", commit)
+            if any(line.startswith(("Dependencies:", "Validation:", "Limits:"))
+                   for line in message.splitlines()):
+                raise SystemExit(f"{name}: {commit} contains repeated message scaffolding")
             author = git("show", "-s", "--format=%an <%ae>", commit)
             committer = git("show", "-s", "--format=%cn <%ce>", commit)
             signoffs = git("show", "-s", "--format=%(trailers:key=Signed-off-by,valueonly)", commit).splitlines()

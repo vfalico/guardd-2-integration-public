@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "reason": "Owner-authorized removal of repeated commit-message scaffolding; no source or binary patch changes.",
+  "projects": {
+    "orka": {
+      "oldTip": "e53dd073cb11b36263f4ad09e26623eb213cc2f8",
+      "newTip": "aaed0ef89d78207d4ae66192ba432b7707e6321c",
+      "baseline": "2026da6ad6e890070de4b28309d478319bc28cb7",
+      "tree": "b0b7f8f0f49764c8678bdd0066473b4e69459ede",
+      "commits": [
+        {
+          "old": "3b664ab0f289587be0562b6e70901dd000f299de",
+          "new": "cd0c8ff44310c6180709a55868b4a7686dd1f64c",
+          "tree": "ab5c52d946216895f5eef1c6a3a957798f1177ff",
+          "subject": "openai: fall back when Responses rejects tool use before output",
+          "patchSHA256": "6c910d99063fc0951e6012150a5fc9e4f6e98f66bee7a9d330c4219394784197",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "ec5a41e8bbed368fb7d838bbbbb0570cd39e788d",
+          "new": "8e11b57868e13d1baa1b6bbbe90aea9fd617c568",
+          "tree": "29961d7240572096d3c577d2c1236d610fae9b87",
+          "subject": "controller: retire cancelled standalone reservations without session acknowledgment",
+          "patchSHA256": "5461e06d4d97e2a02fec21f82bf275dd464bdcc14b12c0d377695bb7e5b2bdee",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "11baca61dd97a02124fbd1e3b1310a250a256954",
+          "new": "898d387ca993fb771869d262af720fc0e2ac0ef1",
+          "tree": "2f1eb31984b9a423ff03fe172bb684971fade7a0",
+          "subject": "charts: synchronize promoted schemas already present in the baseline API",
+          "patchSHA256": "10c545a2ca790edcd0b0cfaa618f8febf415ecaefefda66d99a3c495a1ca422e",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "c62373487797d66205c3461e9b40a0a061ce9fe4",
+          "new": "a9e056ad9a6930fe9636b73da1925851e90f69e3",
+          "tree": "0b128d9172a79a0092f59e9cef3f43ef81a669ba",
+          "subject": "enforcement: define opaque requirements and authenticated provider clients",
+          "patchSHA256": "8415b65a1f53ff2906f5b349587a4d3046057a4159fab8a538caa9930ca51bf3",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "6c51dc27bceed5377c46e6f2d4573e2aade426fa",
+          "new": "9ef4f73bbeb95a31e19ebf94ac28bd67e5a4c1a1",
+          "tree": "aae30748fd03962887755a7499bd0f242854acbb",
+          "subject": "worker: wait for exact authenticated admission before native initialization",
+          "patchSHA256": "a6f323e19ac226dd70ca4f1219bccf977b6fdfd24731204867be008440a5e50c",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "711c93d8be2860d000d6ffb10f14ae90df2410b3",
+          "new": "02dfecf8d7853a48e0318bb144b140af97f9764b",
+          "tree": "c2193fc25603964b8bfd0295530b92ee6bbfef44",
+          "subject": "acp: prepare sessions without starting adapters and fence explicit launch",
+          "patchSHA256": "3a70f0e489872467c6f26619a26b43a899c8cb0dcc6ffd4652027ff060bf7629",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "ec469d131874c0070846a84568f73513d5874828",
+          "new": "00045353b1de0b807b3259680e93f378f15d042c",
+          "tree": "2f24f43c230fbdda9c337753e304f874d4db3bdc",
+          "subject": "controller: retain native admission publication and retirement intent",
+          "patchSHA256": "49dfcdf68b8cb6233b77826dd4afdac33e25e8b082d15b34e31d21495273a0a6",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "0e8ef8918b001c4142cc4e75c095636c2fe26f1c",
+          "new": "9688f773ddaffe6add79903d392304daae1ff603",
+          "tree": "9f99db4bb5cae70cb47944ab0006f81caaaa005d",
+          "subject": "controller: bind ACP verification to the shared physical runtime lifecycle",
+          "patchSHA256": "d1bfb5baafd96b074f45d4e4f3bfd5d150b4dd5a97dd9b4c412b97a55aaa5592",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "b958587c0bfd7212c2a07d3f1d897c11872d185c",
+          "new": "21c61810e9e5c0d0f48c7091b5b023f7031cbbfd",
+          "tree": "6525a91f5035b6c9f1fd662a6a1852c7707c4db3",
+          "subject": "controller: integrate mandatory native and ACP admission without fallback",
+          "patchSHA256": "e178934b17b776da134cf14a310c2c5d62e7d1f9b572aadebc4f2b4fc3f332e8",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "5e657cb3eb8b554112fcfb89b3176da76a468d18",
+          "new": "a97b3d51febf7af911402c58c6a7195ee5cf64a0",
+          "tree": "7f87439d3c487e440acb117c45c309ef14e53eed",
+          "subject": "helm: vendor the optional provider addon without changing ordinary installs",
+          "patchSHA256": "065df88962b8f7becb898c8df5e2ae0af95b23c91b406111851f3705ef9d8614",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "3b0fd35ff4573ce112a85679609c99f802fdcbad",
+          "new": "6b871ed53df37660b44831c98b18979ff96515ac",
+          "tree": "48857b66b68e49bf23ed975d8129c3754d89921b",
+          "subject": "ui: submit complete requirements and render bounded admission outcomes",
+          "patchSHA256": "c624e1a5165c487c6eacc8f7f2600fc194037a30ddafa9caf38a362f0a071692",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "e53dd073cb11b36263f4ad09e26623eb213cc2f8",
+          "new": "aaed0ef89d78207d4ae66192ba432b7707e6321c",
+          "tree": "b0b7f8f0f49764c8678bdd0066473b4e69459ede",
+          "subject": "docs: describe supported combined profiles and qualified end-user examples",
+          "patchSHA256": "90f8e9ee79a1ceeac566be72502759488c34747ad42ffd081e43765bbf41be85",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        }
+      ]
+    },
+    "guardd": {
+      "oldTip": "2a4354af5ecf18198275f0501154c9d578a23ba4",
+      "newTip": "73e7576b8382ded9d593d921cf4b12c55c0b997e",
+      "baseline": "75fead512389cdbe37d766c875089ce8fd485505",
+      "tree": "7f4948c5b0dfd8530148d9f2c105bce6abdf3822",
+      "commits": [
+        {
+          "old": "625d195e8d7abde440b32b0f93c1bc20fde882b8",
+          "new": "119425915f5d06f2ec8856c9a25a5d40d1ea973f",
+          "tree": "6bee17788b14ff17292b9f920b51eeb23452309a",
+          "subject": "native: retain exact held identities and bound descendant protection",
+          "patchSHA256": "d17fa34a7e713b56bd19f64947bf56a52dd1e7c1f287d976392ec9fb6215618f",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "008a7fea4614fa3bb6fbe4fff43443a2885b01be",
+          "new": "2968c153fa33abe06ef05c373a7651b20a1f634f",
+          "tree": "7b5e8829d66b501d56e7fef8feb462a07aadf1a1",
+          "subject": "policy: define the complete combined container requirement",
+          "patchSHA256": "fd18b685ccd6c93642f4317ef8706205fc48349004e1d8f872241a190b6aedce",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "8bdd0d6aa04b623a61d086a414c4350e3e53adae",
+          "new": "0ab32b3e88b4afcc6b758161f94a64f000d41534",
+          "tree": "035a9ca360eed36131c6c6541d88f0e7fb7e55e9",
+          "subject": "native: enforce filesystem and IPv4 ceilings in one held container",
+          "patchSHA256": "a2420469297cd412e88fd0badce928c1e8d7798a778df0f8a7eef016bb1da1ec",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "54619a4fa4dc52e3a45f9ae4c609356e6a77c9b1",
+          "new": "394909c6b8a2e809618e53c49e33fa4b31d6ef84",
+          "tree": "daeda6dc3c3560fec9c3b2b13ca214414ba0d09b",
+          "subject": "protocol: implement the provider-neutral requirement wire contract",
+          "patchSHA256": "0fc1fd94c9dbc9662476d1c2c378c593673417a757505504d23d300645ddbd81",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "f9d3658edf128e05aba695536ebd4a054837ea1d",
+          "new": "2b8bdb12ed0da118a611a140473147288a4abf38",
+          "tree": "c8d70706ab5c208afbffbaf17209ad227cff97af",
+          "subject": "kubernetes: resolve exact node and container incarnations",
+          "patchSHA256": "5aa2c7aba3ee760aa7f7f2124d1ff5dabf24f6275ef7f4dd111359989553ac7b",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "215b7fabe4adf9ac212209ef541129df6c7871b3",
+          "new": "c10215a71d25cb3494d32d875e8a0b9a47ef9759",
+          "tree": "b8febc8885f27659b6ba4cc10943ebc6c5824e5e",
+          "subject": "provider: serve durable whole-container enforcement over mTLS",
+          "patchSHA256": "5a2b793d67a66315f1cd63767b6f8c9cd4dd9042500f72360b0e38658a52f626",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "2a4354af5ecf18198275f0501154c9d578a23ba4",
+          "new": "73e7576b8382ded9d593d921cf4b12c55c0b997e",
+          "tree": "7f4948c5b0dfd8530148d9f2c105bce6abdf3822",
+          "subject": "packaging: install the optional node provider with retained ownership",
+          "patchSHA256": "748e8517315309589fe0ab5b93d1c17159edb167e2fac7ed5a8c08bd88f4247c",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        }
+      ]
+    },
+    "kaimahi": {
+      "oldTip": "aa106fd382de9fee2fee7397ad6044250c02a152",
+      "newTip": "09e6c052b21334bc28267e623b73ab96f400a749",
+      "baseline": "7959afdce64e262417ed214c5b1dd26af1456d1a",
+      "tree": "1a878a0df991a9f2471e71266ebd71e3ef69c655",
+      "commits": [
+        {
+          "old": "d54bde11db3aafc4b18b72a098ddf5f4a4463ba9",
+          "new": "013271ab97ba54463ce63266a8064f133c33cd24",
+          "tree": "60b55f45f86a47694bc9389aac3986c5d206cd73",
+          "subject": "runview: project safe typed enforcement observations",
+          "patchSHA256": "9e8b3ff54438fc66dae4ad55330673d54b8a8d7dda66d84ee055be37f1edec25",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "9638000af0fc4ac8fe1b1cc3b920772f14569eb1",
+          "new": "f2070a7084dc6245df7df2556054484c4d68980b",
+          "tree": "4af2cd5fed6f74228d62b6385fd30350af53a0da",
+          "subject": "orka: verify local installers and retain enrollment and result authority",
+          "patchSHA256": "2cc2b116eea24e431e25ff342b88970ea71f67c570352bee335143ab030bd8e7",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "083aa8b8eb24462613181462d8dd3fac3928de04",
+          "new": "5f21b566c84992afcefbe1b991a88f5ad98f9bcf",
+          "tree": "aaef7b5cfa68ca7d47df4a417ca0f15ba5383e61",
+          "subject": "suite: bind candidate evaluation and deploy to the selected Orka images",
+          "patchSHA256": "b739eb96b70c7f2d7b468443f666646d3f3cbfbf1567e137c29e3e5baec2de1f",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "a9d09b58e5023f5649ddbfdbb043cbac3d0003a6",
+          "new": "2434437807634871e224a0de2d1edb595648a13f",
+          "tree": "95cb463571abad771d0ad4dc306e4a9797a312d3",
+          "subject": "task: forward immutable requirements through native Run and Chat",
+          "patchSHA256": "ca6cab2985fd3d9af885667540fb315cf86e005a9defde1a78365d3ebf569b37",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "beed413859a11e540f90a0ab16c9d72371fa735e",
+          "new": "de041b896a31bb9d29ff5c4a4dbba9886b2fdf74",
+          "tree": "c202955970dfa4d65cc04b5a8984fb78255679b8",
+          "subject": "quickstart: share verified setup and preserve Task namespace placement",
+          "patchSHA256": "2e0cf5fa761ea85db4213c0cf602623c931fcc89dfc02c2b0b08b55c26b92e44",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "a8abd4f7fbfa5a1c370bfcc78bcf42dbb068f693",
+          "new": "8b78dd9b978f66c516a1d14c77e214e6e77b0a0c",
+          "tree": "eb34ebef2232f8a082c4f68b0ee2bb16da1517ea",
+          "subject": "cli: expose explicit candidate and enforcement flags on complete workflows",
+          "patchSHA256": "afe1a0b28966f762a633f1d36b9e71e648066f94f327e30728e51b647e38f11d",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        },
+        {
+          "old": "aa106fd382de9fee2fee7397ad6044250c02a152",
+          "new": "09e6c052b21334bc28267e623b73ab96f400a749",
+          "tree": "1a878a0df991a9f2471e71266ebd71e3ef69c655",
+          "subject": "docs: explain optional enrollment and complete Task requirement authoring",
+          "patchSHA256": "5f9858bc66d5c6730c822592458da5766411825a6c8fdbee5fb94968eaf601d7",
+          "patchPayloadUnchanged": true,
+          "authorAndCommitterMetadataUnchanged": true,
+          "parentsRemappedOnly": true
+        }
+      ]
+    }
+  }
+}
