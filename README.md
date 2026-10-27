@@ -65,6 +65,16 @@ contract despite successful admission and enforcement. The qualified native
 profile is `qwen2.5:3b`; changing models did not establish the other failure's
 root cause or fix it. See the full [limitations and retained failures](docs/qualification.md).
 
+## Additional matched agent evidence
+
+A later 15-case extension applied five scenarios to each of Kaimahi Run,
+native Orka and managed ACP. Nine cases contain actual kernel-denial evidence;
+none earns full strict acceptance. One case failed before tools, four ACP
+cases hit outer tool permissions, and another ACP case refused the requested
+probes. All outcomes and cleanup were retained without case reruns.
+See the [complete matrix and limitations](docs/qualification.md#additional-five-scenario-matched-campaign);
+these results do not relabel the earlier successful ACP demonstration.
+
 ## Scope
 
 This is an experimental, reviewable source integration, not a general sandbox,
