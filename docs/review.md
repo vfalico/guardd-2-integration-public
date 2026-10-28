@@ -23,17 +23,34 @@ git clone --branch guardd-2 https://github.com/vfalico/orka-public.git orka
 git clone --branch guardd-2 https://github.com/vfalico/kaimahi-public.git kaimahi
 git clone --branch guardd-2 https://github.com/vfalico/agentsuite-guardd-public.git guardd
 
-git -C orka switch --detach 3419c9051e1f8ad099171d421d7a40966bb661b9
-git -C kaimahi switch --detach ea871d25627bfcc0a25c1e6866c6c83f45caf5e1
+git -C orka switch --detach 673de3962dd42de39ef7b212c0be2b6e9b3c681b
+git -C kaimahi switch --detach 1286b13b9a89d380e420c795859270ce9a10e881
 git -C guardd switch --detach 73e7576b8382ded9d593d921cf4b12c55c0b997e
 python3 guardd-2-integration-public/tools/verify-source.py --root . --followup
 ```
 
 Orka integrates main `075437a99f4f96ee2614cef28884c9a1ece05568`.
+Its later normal child `673de396` adds only the source/generated chart
+namespace guard and its behavioral regression. It rejects a configuration
+already refused by controller startup; valid fixed-input renders are unchanged.
+These files are excluded from the five unchanged runtime image build contexts.
+Observed Orka images and chart remain bound to `3419c905`/tree `52a5a16f`;
+this is not another image build or physical qualification.
 Kaimahi integrates `c5fa94eed6e46fefb0d7050b9632febff97c83a6`;
 `3bca56eaf1ff916b5cedd4639d78bd2f71816074` is instead the separate
 Linux CI merge target recorded in the manifest. Do not claim it is an
 ancestor of the published Kaimahi tip.
+The later target `6da5db77f44b775cbbdb91962b3e156e9d4917ea` is separately
+tested in synthetic merge `e1aaf699`, not integrated into the review branch.
+The final frozen Linux supplement tests target
+`78026866daccf84b8e8112a7018d45ebee0ef54a` in synthetic merge `e050df6`,
+tree `e6b8b9a`, including its complete agentfile package and 95 compiled
+file-preview App declarations. It does not qualify subsequent main advances.
+The final review commit moves four ordinary package-comment lines only,
+resolving their shared insertion anchor without importing new upstream behavior.
+All executable source is unchanged from EA; the artifact record remains bound
+to EA/tree `d038383f`, not the later review tree. Synthetic CI hashes identify
+private receipts, not public downloadable objects or an artifact attestation.
 
 The follow-up verifier checks exact tips/trees, baseline and integrated-main
 ancestry, and the complete ordered owner series after excluding those mains.

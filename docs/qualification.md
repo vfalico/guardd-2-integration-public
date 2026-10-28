@@ -2,13 +2,44 @@
 
 ## Follow-up PR remediation
 
-The manifest's additive `followupPublication` pins Orka `3419c905` and Kaimahi
-`ea871d25`, with unchanged Guardd source. Its private observed artifacts are
-bound to those exact trees, not substituted for the historical digests below.
+The manifest's additive `followupPublication` pins Orka `673de396` and Kaimahi
+`1286b13b`, with unchanged Guardd source. Its private observed Orka artifacts
+retain `3419c905`/tree `52a5a16f`; Kaimahi artifacts retain EA/tree `d038383f`, before the
+ordinary-comment-only review descendant. Neither substitutes for the historical
+digests below.
 Five Orka images were rebuilt and admitted; Guardd's existing image was reused
 only after installed-source verification. The CLI/chart identities and exact
 manifest/config digests are recorded separately. No images or raw lab evidence
 are published here, and a rebuild is not promised to reproduce their digests.
+
+Orka's later normal child adds a source/generated Helm guard against an
+enabled AgentHost namespace equal to the effective watched namespace, plus
+its behavioral regression. Controller startup already rejects that collision.
+All three changed files are excluded from the five unchanged image build
+contexts. Eight complete source/staged chart comparisons retain exact byte
+identity for four valid namespace profiles with fixed supported Secret
+references; generated credentials are not stripped from output to manufacture
+equivalence. The actual qualified package defaults AgentHosts off, and the
+retained release values do not override that default. The physical results
+below remain original executions on their recorded artifacts, not fresh
+executions at `673de396` or an assertion about newly rebuilt images/chart.
+
+Final Orka local CI passes the complete uncached non-E2E Makefile suite
+after official module tidy, plus nine workflow-command steps. Three successful
+UI checks are reused through unchanged inputs, not rerun or rebuilt assets.
+The verbose dependency scan reports zero reachable vulnerable symbols, with
+these nonreachable advisories retained:
+
+| Classification | Advisory | Observed module | Reported fix |
+| --- | --- | --- | --- |
+| Imported package | GO-2026-6866, GO-2026-6860 | `golang.org/x/net v0.60.0` | v0.62.0 |
+| Imported package | GO-2026-6094 | `github.com/google/cel-go v0.29.2` | v0.30.0 |
+| Required module | GO-2026-5932 | `golang.org/x/crypto v0.57.0` | None listed |
+
+These are the final scan's identities, not an attribution of earlier summary
+counts. Declared module files equal integrated upstream main `075437a9`;
+baseline package imports/reachability and complete causal attribution remain
+unproven. This is not an advisory-free dependency or universal safety claim.
 
 On the disposable Linux/amd64 Kubernetes/containerd profile, component
 coverage completes across four Kaimahi/native cases in round03 and two
@@ -103,6 +134,28 @@ documentation check executed in a separate successful continuation, without
 repeating Go tests. Manifests and tracked source remain unchanged. The large
 bundle warning remains an unsuppressed, nonblocking advisory. No failed
 receipt is rewritten into an all-zero run.
+
+A subsequent target `6da5db77` adds file-preview availability reporting and
+collides only with the feature branch's ordinary package-comment insertion.
+Review tip `1286b13b` relocates the four existing enforcement documentation
+lines without changing their text, any other tracked file, the package/code
+suffix or code line numbers. Prior EA full/physical evidence is reused through
+that unchanged executable source, not claimed as a rebuilt-binary identity.
+Its separate clean synthetic merge `e1aaf699`, tree `543f4ba`, covers the newer
+target; the earlier `7016c63` result still belongs only to `3bca56e`.
+
+The final frozen supplement tests source `1286b13b` against target `78026866`
+in private synthetic merge `e050df6`, tree `e6b8b9a`. All eight steps succeed:
+the complete agentfile and affected packages, all 95 compiled file-preview App
+declarations, typed callers, contract checker, documentation build and 13 Node
+tests. This includes the target's inline-parser and checked companion-reader
+changes. Agentfile has 131 passing top-level tests and one skipped nested
+reused-parent-ID case: this filesystem does not reuse the ID within 10,000
+attempts. Existing live/installed-tool/platform skips, the no-tests agentpreview
+package and the large-bundle warning remain. Windows-only reader execution is
+excluded. The snapshot contains the complete required commit/tree, not full
+history; no later-main, all-hosted-job, new physical or rebuilt-artifact claim
+follows. This is the frozen cutoff, not a promise to chase subsequent main.
 
 ## Historical source and artifacts
 

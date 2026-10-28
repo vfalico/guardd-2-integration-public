@@ -19,7 +19,7 @@ the retained Go 1.27.2 compiler/runtime risk.
 ```
 
 Use the built binary's help and the
-[exact Kaimahi source documentation](https://github.com/vfalico/kaimahi-public/blob/ea871d25627bfcc0a25c1e6866c6c83f45caf5e1/docs/kmx.md)
+[exact Kaimahi source documentation](https://github.com/vfalico/kaimahi-public/blob/1286b13b9a89d380e420c795859270ce9a10e881/docs/kmx.md)
 for current `cluster`/`package` routing and FILE/workspace semantics.
 The original root-command examples below are historical, not instructions
 for those newer CLI sources. Do not infer new flags from old recipes.

@@ -23,8 +23,8 @@ summarizes how the implementation addresses his feedback and links both PRs.
 ## Follow-up review pins
 
 The additive `followupPublication` record in the manifest pins Orka
-`3419c9051e1f8ad099171d421d7a40966bb661b9` and Kaimahi
-`ea871d25627bfcc0a25c1e6866c6c83f45caf5e1`. Guardd is unchanged.
+`673de3962dd42de39ef7b212c0be2b6e9b3c681b` and Kaimahi
+`1286b13b9a89d380e420c795859270ce9a10e881`. Guardd is unchanged.
 Use [the follow-up checkout instructions](docs/review.md#follow-up-source-selection)
 and `verify-source.py --followup`; the default verifier intentionally retains
 the original publication's pins.
@@ -34,6 +34,17 @@ not another metadata-only rewrite. The manifest records the original owner
 series plus its exact additional commits, excluding explicitly integrated
 upstream ancestry. Kaimahi's separate exact-target CI merge is not its source
 tip or an additional integrated ancestor.
+Its final review-only change relocates ordinary package comments to avoid an
+upstream documentation conflict; executable source remains unchanged from
+qualified EA. Kaimahi CLI provenance retains EA's tree; Orka and Guardd image
+provenance retains their separately recorded trees. The later review tree
+does not imply an identical-rebuild claim.
+Orka's final chart-only guard rejects an enabled AgentHost namespace equal to
+the watched namespace, which the controller already rejects at startup.
+The three changed files do not enter its unchanged image build contexts;
+valid source/staged renders remain byte-identical under fixed supported inputs.
+Its observed images and chart retain `3419c905`/tree `52a5a16f` provenance,
+not the later review tree or a claim of fresh physical execution.
 
 A bounded component campaign and predefined six-case repeat demonstrate actual
 model-issued filesystem/TCP denials, permitted work and execution continuation.

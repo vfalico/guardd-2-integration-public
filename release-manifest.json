@@ -234,8 +234,8 @@
     "seriesRule": "Original project series plus additionalSeries, in reverse topological order after excluding declared integrated-main ancestry.",
     "projects": {
       "orka": {
-        "tip": "3419c9051e1f8ad099171d421d7a40966bb661b9",
-        "tree": "52a5a16ff961bbec4626d79ff7561cc61184d021",
+        "tip": "673de3962dd42de39ef7b212c0be2b6e9b3c681b",
+        "tree": "9bda567d1bfab482669a375550e72e0e9da29903",
         "integratedMains": [
           "075437a99f4f96ee2614cef28884c9a1ece05568"
         ],
@@ -275,12 +275,22 @@
           {
             "commit": "3419c9051e1f8ad099171d421d7a40966bb661b9",
             "subject": "Merge current main while preserving Guardd retirement fences"
+          },
+          {
+            "commit": "673de3962dd42de39ef7b212c0be2b6e9b3c681b",
+            "subject": "Reject AgentHosts in the controller watched namespace"
           }
-        ]
+        ],
+        "renderOnlyFollowup": {
+          "qualifiedSourceTip": "3419c9051e1f8ad099171d421d7a40966bb661b9",
+          "qualifiedSourceTree": "52a5a16ff961bbec4626d79ff7561cc61184d021",
+          "delta": "Reject enabled AgentHosts whose namespace equals the effective watched namespace, matching existing controller startup validation; regenerate the staged helper and add behavioral Helm controls.",
+          "reuse": "The three changed files are excluded from all five unchanged image build contexts. Complete source/staged chart renders retain byte identity for four valid configurations with fixed supported Secret references. The qualified release has AgentHosts disabled. Original observed images and chart retain the qualified source above; no image rebuild, new physical execution or identical rebuilt-binary claim."
+        }
       },
       "kaimahi": {
-        "tip": "ea871d25627bfcc0a25c1e6866c6c83f45caf5e1",
-        "tree": "d038383fc2c60104ee119c75a2fbfd51a9583b89",
+        "tip": "1286b13b9a89d380e420c795859270ce9a10e881",
+        "tree": "0a9b32ccd47fbd8177751f3a95824acd3b681438",
         "integratedMains": [
           "c5fa94eed6e46fefb0d7050b9632febff97c83a6"
         ],
@@ -312,13 +322,37 @@
           {
             "commit": "ea871d25627bfcc0a25c1e6866c6c83f45caf5e1",
             "subject": "fix(orka): refuse invalid derived chart labels before installation"
+          },
+          {
+            "commit": "1286b13b9a89d380e420c795859270ce9a10e881",
+            "subject": "docs(app): separate enforcement guidance from preview notes"
           }
         ],
+        "sourceOnlyFollowup": {
+          "qualifiedSourceTip": "ea871d25627bfcc0a25c1e6866c6c83f45caf5e1",
+          "qualifiedSourceTree": "d038383fc2c60104ee119c75a2fbfd51a9583b89",
+          "delta": "Relocates four ordinary package-comment lines in internal/kmx/app/app.go; all other tracked files and the entire package/code suffix are byte-identical, with unchanged code offsets and line numbers.",
+          "reuse": "Prior full/physical evidence applies through unchanged executable source. The observed Kaimahi CLI retains the qualified source above; Orka and Guardd images retain their separately recorded sources. No identical rebuilt-binary claim."
+        },
         "separateCIMerge": {
           "target": "3bca56eaf1ff916b5cedd4639d78bd2f71816074",
           "syntheticCommit": "7016c63deeeaf9ba81463cbb16ac564b3f888cfd",
           "tree": "35c7646f3447d583586442eca6f523767462cc68",
           "scope": "Linux exact-target supplement; target is not an ancestor of the published source tip."
+        },
+        "additionalCIMerge": {
+          "target": "6da5db77f44b775cbbdb91962b3e156e9d4917ea",
+          "syntheticCommit": "e1aaf6991d4b6287596a92cebc245c7009ed882b",
+          "tree": "543f4ba053a3f40e8138ca99d83585f10dad3227",
+          "sourceHead": "1286b13b9a89d380e420c795859270ce9a10e881",
+          "scope": "Separate Linux exact-target supplement, not native Windows or public artifact attestation; target is not an ancestor of the published source tip."
+        },
+        "finalFrozenCIMerge": {
+          "target": "78026866daccf84b8e8112a7018d45ebee0ef54a",
+          "syntheticCommit": "e050df6eb20a2d67b352ad246bb89367f6c50f4a",
+          "tree": "e6b8b9a5403e5dc652ab5ac4b956398d352a6ed8",
+          "sourceHead": "1286b13b9a89d380e420c795859270ce9a10e881",
+          "scope": "Final frozen Linux target supplement, including the complete agentfile package and all 95 compiled file-preview App declarations. Not native Windows, later-main qualification or public artifact attestation; target is not an ancestor of the published source tip."
         }
       }
     },
@@ -365,7 +399,7 @@
         "serialization": "SHA256 of Python json.dumps(requirement, sort_keys=True, separators=(',', ':'), ensure_ascii=True).encode('utf-8'), with no trailing newline. Not raw-file SHA256 or the Orka Task requirementDigest.",
         "scope": "Exact private infrastructure-bound requirements; hashes are not portable policy files."
       },
-      "note": "Private observed builds, not published artifacts or reproducible-build attestations. Source verification does not validate these artifact records."
+      "note": "Private observed builds, not published artifacts or reproducible-build attestations. The Kaimahi CLI retains EA/tree d038 provenance; its later review tip relocates ordinary comments only. Orka images and chart retain 3419/tree52a5 provenance before the render-only invalid-configuration guard; Guardd retains its separately recorded source. Source verification does not validate these artifact records."
     },
     "model": {
       "model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
