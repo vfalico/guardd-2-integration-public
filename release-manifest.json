@@ -228,6 +228,154 @@
     "No universal platform, child-UID, checkout-immutability or production qualification.",
     "Public summaries are sanitized; private raw evidence is not distributed."
   ],
+  "followupPublication": {
+    "date": "2026-10-28",
+    "scope": "Additive follow-up pins; original projects, artifacts and metadata maps remain historical records.",
+    "seriesRule": "Original project series plus additionalSeries, in reverse topological order after excluding declared integrated-main ancestry.",
+    "projects": {
+      "orka": {
+        "tip": "3419c9051e1f8ad099171d421d7a40966bb661b9",
+        "tree": "52a5a16ff961bbec4626d79ff7561cc61184d021",
+        "integratedMains": [
+          "075437a99f4f96ee2614cef28884c9a1ece05568"
+        ],
+        "additionalSeries": [
+          {
+            "commit": "f023cbc0495b70643ae86fc2552e837b01a6bdb1",
+            "subject": "fix(llm): preserve Responses stream errors without replaying work"
+          },
+          {
+            "commit": "3ecad5c8a782ee23923401205dea5900b8b9ee2a",
+            "subject": "fix(api): retain ordered immutable enforcement through Task admission"
+          },
+          {
+            "commit": "a2016856acd12645207a2bf04989a2e9c46f990d",
+            "subject": "fix(api): refuse protected Task creates against stale schemas"
+          },
+          {
+            "commit": "6d0aec868c8939de7847a9e930d97b5556783ccb",
+            "subject": "fix(helm): preserve optional enrollment and watched-namespace admission"
+          },
+          {
+            "commit": "0c7e9de23e5d9f5aa9a3d39f55f1a1e69cc9c5d4",
+            "subject": "refactor(enforcement): separate native admission lifecycle phases"
+          },
+          {
+            "commit": "c60d575b985c17846691dd8bfa6a2a00596be0a6",
+            "subject": "refactor(enforcement): clarify ACP attempt and preparation checks"
+          },
+          {
+            "commit": "de3cb7ee3122da5454228239acd158050461fd0c",
+            "subject": "fix(enforcement): surface registry close errors and simplify error handling"
+          },
+          {
+            "commit": "226a256d551f7b2fd163451790b8a6868a32e5c4",
+            "subject": "fix(helm): check watched namespace before disabling agent hosts"
+          },
+          {
+            "commit": "3419c9051e1f8ad099171d421d7a40966bb661b9",
+            "subject": "Merge current main while preserving Guardd retirement fences"
+          }
+        ]
+      },
+      "kaimahi": {
+        "tip": "ea871d25627bfcc0a25c1e6866c6c83f45caf5e1",
+        "tree": "d038383fc2c60104ee119c75a2fbfd51a9583b89",
+        "integratedMains": [
+          "c5fa94eed6e46fefb0d7050b9632febff97c83a6"
+        ],
+        "additionalSeries": [
+          {
+            "commit": "9f15d9ab01814d394ca08bf07fcbf4e1d8556d9d",
+            "subject": "fix(cli): reject empty local chart selectors before configuration"
+          },
+          {
+            "commit": "4d621fd0102a5a43513fc60426a3e011060eecd6",
+            "subject": "fix(orka): refuse malformed Service discovery before fallback"
+          },
+          {
+            "commit": "418071e8e1698b1ec8574d590436c987fd6d09cb",
+            "subject": "fix(orka): inspect exact enrolled candidates with normalized Helm labels"
+          },
+          {
+            "commit": "dbef67e115be9d8d3874740285c903fb052b4714",
+            "subject": "refactor(orka): remove unused management-only Secret wrapper"
+          },
+          {
+            "commit": "f87b4902ba495fb9c0e2ce9e3767fe56b29893df",
+            "subject": "test(windows): exercise registered flags without a copied inventory"
+          },
+          {
+            "commit": "a07c029390c20bef09cd0ddaac76a399a06e50e8",
+            "subject": "Merge current main while preserving Guardd enforcement boundaries"
+          },
+          {
+            "commit": "ea871d25627bfcc0a25c1e6866c6c83f45caf5e1",
+            "subject": "fix(orka): refuse invalid derived chart labels before installation"
+          }
+        ],
+        "separateCIMerge": {
+          "target": "3bca56eaf1ff916b5cedd4639d78bd2f71816074",
+          "syntheticCommit": "7016c63deeeaf9ba81463cbb16ac564b3f888cfd",
+          "tree": "35c7646f3447d583586442eca6f523767462cc68",
+          "scope": "Linux exact-target supplement; target is not an ancestor of the published source tip."
+        }
+      }
+    },
+    "observedArtifacts": {
+      "platform": "linux/amd64",
+      "publicImages": false,
+      "qualifiedSourceTrees": {
+        "orka": "52a5a16ff961bbec4626d79ff7561cc61184d021",
+        "kaimahi": "d038383fc2c60104ee119c75a2fbfd51a9583b89",
+        "guardd": "7f4948c5b0dfd8530148d9f2c105bce6abdf3822"
+      },
+      "images": {
+        "controller": {
+          "manifestDigest": "sha256:afa28a08ad57af435adba669cf87d83b2436746f38d464f5daaf84fe9d0b2ea8",
+          "configDigest": "sha256:796433b2ecf06a5d5c8685af966a115577adecca1384c79cb45a362152302c22"
+        },
+        "ai-worker": {
+          "manifestDigest": "sha256:ffc74477d832a170c24cea6e0d6cb59487f1fac68f883414ecdd5b8905dbe4c5",
+          "configDigest": "sha256:c7aa28701ab6a6f1c34ebf63c1e6f63d6c9b7372f7afe0638c12cb6b02f6ce71"
+        },
+        "general-worker": {
+          "manifestDigest": "sha256:0d1d08a9fdfeecf548fd6acf3935910ac18180f8380aa0f6fb4d09d83fdba4d8",
+          "configDigest": "sha256:a850d35f9f6a135a70b67bf81503dce4091ee0fce8c99ad2b70ad2b7f2ea9744"
+        },
+        "publisher": {
+          "manifestDigest": "sha256:6acd28efd8533872cb51a68ad39ee496b8d3c5f383bf6cec8632624110046427",
+          "configDigest": "sha256:e48c0c4192222a3a0049d01f70e43c148810f1385eae48a6d60d9ce212cce361"
+        },
+        "acp-opencode-runtime": {
+          "manifestDigest": "sha256:2184e149647da90b4305ce8aaa49c0e1d0353604843a4c82f321a49745b2087d",
+          "configDigest": "sha256:dda3ab9ec9cb088f65aed0aa3e83fa9103af762c510843ae7b030c8f95403307"
+        },
+        "guardd": {
+          "manifestDigest": "sha256:bdc1dad8b0063ec994840d55fccb9ce9194218d49aacffde488d4f0c82852626",
+          "configDigest": "sha256:93aafe2f6627a341aa8930ef16bf01df39ebb953c53a5b37ab1e87b504b7c30b",
+          "reusedAfterInstalledSourceVerification": true
+        }
+      },
+      "CLI_SHA256": "6a941e5fd219c30fb559af9ff6e80105bacba125f86f6c89fa962c434759eb34",
+      "chartSHA256": "db85cfa084d5518d3c163982b9eada270136044dbcb3592da652d94981ca0ef5",
+      "materializedRequirements": {
+        "nativeSHA256": "23bfcd19912928609735ecc8f89fb81365b50f3d1d101500df61ec19bccacdd0",
+        "ACP_SHA256": "0d091e33bcb34efed5879ff50a31bf5fef0d8cad4e5e206c3d4a33b7fccbe562",
+        "serialization": "SHA256 of Python json.dumps(requirement, sort_keys=True, separators=(',', ':'), ensure_ascii=True).encode('utf-8'), with no trailing newline. Not raw-file SHA256 or the Orka Task requirementDigest.",
+        "scope": "Exact private infrastructure-bound requirements; hashes are not portable policy files."
+      },
+      "note": "Private observed builds, not published artifacts or reproducible-build attestations. Source verification does not validate these artifact records."
+    },
+    "model": {
+      "model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+      "revision": "b2cff646eb4bb1d68355c01b18ae02e7cf42d120",
+      "verifiedFiles": 24,
+      "scope": "Bounded tool-call probes, not a repair of historical exact-answer or factual-report failures."
+    },
+    "qualification": "Bounded physical03/07 component outcomes and predefined six-case08 repeat; see docs/qualification.md. No universal platform/model or strict narration acceptance.",
+    "backendRetired": true
+  },
   "commitMetadataPolicy": {
     "scope": "Metadata-only replacements recorded in the two maps; excludes the sourceful Kaimahi review refresh.",
     "DCO": "required, matching responsible contributor author",

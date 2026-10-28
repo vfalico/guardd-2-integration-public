@@ -5,9 +5,43 @@ commands are opt-in examples for an authorized disposable lab, not permission
 to change production, download models, contact paid inference, publish images
 or remove retained installation state.
 
-## 1. Pin source and prerequisites
+## Current follow-up build and CLI
 
-Follow [the clone/verification instructions](review.md). Use Go 1.27.2,
+Use the [follow-up source selection](review.md#follow-up-source-selection) and
+the explicit `--followup` verifier mode. Local verification uses Go 1.27.3
+for Orka and Go 1.26.10 for Kaimahi; follow each exact component's manifests
+and Dockerfiles for its other build inputs. This does not resolve or erase
+the retained Go 1.27.2 compiler/runtime risk.
+
+```sh
+(cd kaimahi && GOTOOLCHAIN=go1.26.10 make build)
+(cd orka && GOTOOLCHAIN=go1.27.3 make build)
+```
+
+Use the built binary's help and the
+[exact Kaimahi source documentation](https://github.com/vfalico/kaimahi-public/blob/ea871d25627bfcc0a25c1e6866c6c83f45caf5e1/docs/kmx.md)
+for current `cluster`/`package` routing and FILE/workspace semantics.
+The original root-command examples below are historical, not instructions
+for those newer CLI sources. Do not infer new flags from old recipes.
+
+Materialize complete requirements against verified current workload/Pod,
+Service and endpoint identities before freezing a new Task. Historical
+controller/proxy IP grants are not portable defaults. Preserve profile-specific
+permissions: the follow-up native grant did not gain an ACP proxy or TCP
+wildcard. Never patch an admitted requirement to accommodate infrastructure
+drift; fail visibly and prepare a separately identified future request.
+
+## Original qualified-profile recipe
+
+The numbered sections below retain the original sources, toolchains, command
+routes and lab workflow. Select the original pins in the review map and use
+the default verifier to follow that historical recipe. Do not mix it with
+follow-up pins or treat it as new qualification.
+
+## 1. Original source and prerequisites
+
+Follow [the original clone/verification instructions](review.md#original-pinned-source-without-touching-upstream).
+The original build used Go 1.27.2,
 Python 3, Bun (the fresh build used 1.4.4), Helm 3, Kubernetes CLI and
 kustomize 5.7.1 (also installed locally by Orka's manifest target).
 Image building additionally needs Docker Buildx/BuildKit. Native compilation

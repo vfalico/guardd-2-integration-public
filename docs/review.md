@@ -11,9 +11,50 @@ The submitted review entry points are:
 
 See the [posted response to Sertac](https://github.com/orka-agents/orka/pull/831#issuecomment-6436965569)
 on the original RFC for the approach and its relationship to his feedback.
-The pinned source and qualification boundaries below remain unchanged.
+Historical pins and qualification records are retained below. Follow-up pins
+are additive, not a relabeling of those records.
 
-## Fetch pinned source, without touching upstream
+## Follow-up source selection
+
+Clone only the owner-controlled repositories into a new directory:
+
+```sh
+git clone --branch guardd-2 https://github.com/vfalico/orka-public.git orka
+git clone --branch guardd-2 https://github.com/vfalico/kaimahi-public.git kaimahi
+git clone --branch guardd-2 https://github.com/vfalico/agentsuite-guardd-public.git guardd
+
+git -C orka switch --detach 3419c9051e1f8ad099171d421d7a40966bb661b9
+git -C kaimahi switch --detach ea871d25627bfcc0a25c1e6866c6c83f45caf5e1
+git -C guardd switch --detach 73e7576b8382ded9d593d921cf4b12c55c0b997e
+python3 guardd-2-integration-public/tools/verify-source.py --root . --followup
+```
+
+Orka integrates main `075437a99f4f96ee2614cef28884c9a1ece05568`.
+Kaimahi integrates `c5fa94eed6e46fefb0d7050b9632febff97c83a6`;
+`3bca56eaf1ff916b5cedd4639d78bd2f71816074` is instead the separate
+Linux CI merge target recorded in the manifest. Do not claim it is an
+ancestor of the published Kaimahi tip.
+
+The follow-up verifier checks exact tips/trees, baseline and integrated-main
+ancestry, and the complete ordered owner series after excluding those mains.
+It preserves legitimate upstream attribution and applies the contributor
+policy to owner commits only. It does not validate artifact digests or establish
+test execution, binary provenance or live enforcement.
+
+These histories contain merges. To preserve their actual commit graph, export
+a Git bundle from a complete clone, for example:
+
+```sh
+git -C orka bundle create ../orka-guardd2.bundle HEAD
+```
+
+A binary `git diff --binary --full-index <baseline> <tip>` can reproduce
+tracked content on its exact baseline, including integrated upstream changes;
+it does not preserve merge topology or replace commit/DCO provenance. Do not
+apply the historical linear mail-patch recipe below to the new merge graph
+and assume `git am` reproduces it.
+
+## Original pinned source, without touching upstream
 
 Run these commands in a new directory. Only owner-controlled public
 repositories are cloned; no command publishes anything or opens a PR.
@@ -39,7 +80,7 @@ ordered series commit and the [commit policy](../CONTRIBUTING.md). It does not
 run tests, inspect ignored build outputs, verify a binary or establish live
 enforcement.
 
-Kaimahi's review baseline is now
+Kaimahi's original refreshed review baseline is
 `3a0ab5695201e088acda79a4f4981f8e40da1cb2`. Its seven commits preserve six
 feature patches unchanged; the CLI patch integrates current FILE semantics,
 refusal regressions and a release-note fragment. See
@@ -103,9 +144,10 @@ Those prerequisites follow the preserved source repository's public
 `499462908370d8f62543b8e93fa35f6fb93cb4ae`. They are visible baseline history,
 not seven additional independent fixes or an invisible dependency.
 
-## Export mail patches or inspect deltas
+## Historical linear mail-patch export
 
-Use the manifest's baseline for each project:
+This recipe applies to the original `projects` records, not the merged
+`followupPublication` histories. Use the original baseline for each project:
 
 ```sh
 mkdir orka-patches

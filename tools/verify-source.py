@@ -10,9 +10,23 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, required=True,
                         help="directory containing orka/, kaimahi/ and guardd/")
+    parser.add_argument("--followup", action="store_true",
+                        help="verify the follow-up review pins instead of the original publication")
     options = parser.parse_args()
     manifest = json.loads((Path(__file__).resolve().parents[1] / "release-manifest.json").read_bytes())
-    for name, expected in manifest["projects"].items():
+    projects = manifest["projects"]
+    updates = {}
+    if options.followup:
+        updates = manifest["followupPublication"]["projects"]
+        if set(updates) != {"orka", "kaimahi"}:
+            raise SystemExit("follow-up must override exactly Orka and Kaimahi")
+        projects = dict(projects)
+        for name, update in updates.items():
+            projects[name] = {
+                **projects[name], **update,
+                "series": projects[name]["series"] + update["additionalSeries"],
+            }
+    for name, expected in projects.items():
         repository = options.root / name
 
         def git(*args):
@@ -26,7 +40,15 @@ def main():
             raise SystemExit(f"{name}: tracked tree differs")
         subprocess.run(["git", "-C", str(repository), "merge-base", "--is-ancestor",
                         expected["baseline"], "HEAD"], check=True)
-        actual = git("rev-list", "--reverse", expected["baseline"] + "..HEAD").splitlines()
+        if name in updates:
+            for main in expected["integratedMains"]:
+                subprocess.run(["git", "-C", str(repository), "merge-base", "--is-ancestor",
+                                main, "HEAD"], check=True)
+            actual = git("rev-list", "--topo-order", "--reverse",
+                         expected["baseline"] + "..HEAD",
+                         "--not", *expected["integratedMains"]).splitlines()
+        else:
+            actual = git("rev-list", "--reverse", expected["baseline"] + "..HEAD").splitlines()
         if actual != [entry["commit"] for entry in expected["series"]]:
             raise SystemExit(f"{name}: ordered review series differs")
         commits = [entry["commit"] for entry in expected.get("baselinePrerequisites", [])] + actual

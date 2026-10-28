@@ -16,12 +16,25 @@ repeated `Dependencies:`, `Validation:` or `Limits:` scaffold blocks. Put
 series-wide dependencies and qualification details in the review map and
 qualification document; retain necessary technical explanation in the body.
 
-The source verifier enforces this policy for all 26 series commits and the
-two explicitly listed Guardd baseline prerequisites:
+The source verifier enforces this policy for the selected owner series and
+the explicitly listed Guardd baseline prerequisites:
 
 ```sh
 python3 tools/verify-source.py --root /path/to/source-parent
+python3 tools/verify-source.py --root /path/to/source-parent --followup
 ```
+
+The verifier's isolated Git-history controls need no cluster or model:
+
+```sh
+python3 tools/test_verify_source.py
+```
+
+The first command retains the original publication. The second selects the
+follow-up pins and concatenates each original owner series with its declared
+additional commits. Explicitly integrated upstream ancestry is verified and
+excluded from this owner-series metadata policy; legitimate upstream history
+and attribution are not rewritten. Guardd and its prerequisites are unchanged.
 
 Use the same policy for changes to this guide. Configure normal Git identity
 locally and use `git commit -s`; do not put private keys, tokens or machine
@@ -39,7 +52,7 @@ replacement. The subsequent
 published identities to the cleaned commits after removing repeated message
 scaffolding. Both replacements preserve source trees and binary patch payloads.
 
-The manifest keeps original qualified identities alongside current review tips.
+The manifest keeps original qualified identities alongside distinct review pins.
 Existing E2E results remained applicable to those metadata-only replacements
 because source/payload identity was checked. Git-derived build metadata and a
 Git-archive envelope can still differ.

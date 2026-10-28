@@ -20,6 +20,30 @@ The series was submitted for upstream review on 2026-10-27:
 The [response to Sertac on the original RFC](https://github.com/orka-agents/orka/pull/831#issuecomment-6436965569)
 summarizes how the implementation addresses his feedback and links both PRs.
 
+## Follow-up review pins
+
+The additive `followupPublication` record in the manifest pins Orka
+`3419c9051e1f8ad099171d421d7a40966bb661b9` and Kaimahi
+`ea871d25627bfcc0a25c1e6866c6c83f45caf5e1`. Guardd is unchanged.
+Use [the follow-up checkout instructions](docs/review.md#follow-up-source-selection)
+and `verify-source.py --followup`; the default verifier intentionally retains
+the original publication's pins.
+
+These sources include the reviewed PR fixes and integrated upstream history,
+not another metadata-only rewrite. The manifest records the original owner
+series plus its exact additional commits, excluding explicitly integrated
+upstream ancestry. Kaimahi's separate exact-target CI merge is not its source
+tip or an additional integrated ancestor.
+
+A bounded component campaign and predefined six-case repeat demonstrate actual
+model-issued filesystem/TCP denials, permitted work and execution continuation.
+They do not establish truthful model narration, adaptive continuation in every
+case, Responses-tool success or universal confinement. The original model and
+platform failures below remain historical facts, not implicitly fixed results.
+See [the follow-up evidence and caveats](docs/qualification.md#follow-up-pr-remediation).
+The new private image/CLI/chart bindings are separate from the historical
+`observedArtifacts`; neither set is a public artifact download catalog.
+
 Source branches and responsibilities:
 
 | Repository | Review branch | Responsibility |
@@ -41,7 +65,7 @@ both maps remain intact. Kaimahi's current review branch additionally integrates
 fresh main. Its original qualified snapshot is retained separately in the
 manifest and the `guardd-2-qualified-20261026` tag, not relabeled as the refresh.
 
-## Review shape
+## Original review shape
 
 There are **26 feature-series commits: Orka 12, Guardd 7, Kaimahi 7**.
 Orka's first two commits are independent ordinary bug fixes; neither requires
@@ -57,7 +81,7 @@ Upstream additions, including AgentHost functionality, were preserved. This is
 qualification of these exact snapshots plus the series, not a promise about
 whatever an upstream branch points to later.
 
-Kaimahi's current review series is now based on
+Kaimahi's original refreshed review series was based on
 `3a0ab5695201e088acda79a4f4981f8e40da1cb2`, at tip
 `019e0de701c1a3ab32149c53dfe08db830b2af94`. Six patches are unchanged; the
 CLI patch preserves the updated upstream FILE command semantics and adds
@@ -66,7 +90,7 @@ CLI build passed. This refresh is not a new live E2E qualification; the
 artifact digests and demonstrations below remain tied to the manifest's
 explicit historical qualified source trees.
 
-## Actual pre-publication results
+## Original pre-publication results
 
 On the supported disposable Linux/amd64 Kubernetes/containerd lab profile:
 

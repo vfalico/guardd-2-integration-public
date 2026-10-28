@@ -1,8 +1,112 @@
 # Qualification and retained limitations
 
-## Exact source and artifacts
+## Follow-up PR remediation
 
-`release-manifest.json` records current review baselines/ordered commits and,
+The manifest's additive `followupPublication` pins Orka `3419c905` and Kaimahi
+`ea871d25`, with unchanged Guardd source. Its private observed artifacts are
+bound to those exact trees, not substituted for the historical digests below.
+Five Orka images were rebuilt and admitted; Guardd's existing image was reused
+only after installed-source verification. The CLI/chart identities and exact
+manifest/config digests are recorded separately. No images or raw lab evidence
+are published here, and a rebuild is not promised to reproduce their digests.
+
+On the disposable Linux/amd64 Kubernetes/containerd profile, component
+coverage completes across four Kaimahi/native cases in round03 and two
+corrected ACP cases in round07. A predefined six-case round08 then repeats
+the two scenarios through each journey:
+
+| Journey | Protected creation | Excluded TCP / permitted control | Permitted files |
+| --- | --- | --- | --- |
+| Kaimahi CLI | Model-issued `openat` returns EACCES; target absent. | Excluded connection returns EACCES; allowed destination returns the owned listener marker. | Allowed and continuation writes/reads succeed. |
+| Standalone native API | Same demonstrated creation denial. | Same demonstrated denied connection and successful owned-listener control. | Allowed and continuation writes/reads succeed. |
+| Managed OpenCode ACP | Actual Bash child creation returns EACCES; target absent. | Excluded connection returns EACCES; allowed connection returns HTTP200 and the owned marker. | Allowed and continuation writes/reads succeed. |
+
+These are correlated model tool calls/results, exact-runtime syscall traces,
+file contents, authenticated provider readback and matching cgroup/BPF state,
+not deductions from Task success or final model prose. The materialized
+native and ACP requirement hashes are distinct. Native retains its existing
+controller TCP8080 grant without an added proxy or wildcard; ACP retains its
+own controller/proxy permissions.
+These hashes bind the manifest's stated sorted-key compact JSON serialization,
+not raw requirement-file bytes or Orka Task `requirementDigest` values.
+
+### Retained infrastructure failure
+
+Round03 ACP fails before admission: the requirement still grants historical
+controller/proxy Pod addresses after an accepted upgrade changes those
+incarnations. Exact active endpoint-map/readback evidence and differing
+host/controller-namespace connectivity support this stale-policy diagnosis;
+the precise packet-drop hook is not independently established. The Task
+naturally reaches TaskTimeout. No inference is forwarded through the owned
+model gate; this is not an all-route/backend-traffic claim.
+
+The correction freezes verified workload ownership, Pod/container, Service
+and ready endpoint identities, refreshes only the existing exact-IP role
+entries and rechecks the complete policy before every new request. Drift
+fails closed; no admitted requirement is edited and no grant is widened.
+Unexecuted preparation candidates and the failed attempt remain retained.
+The cleanup validator separately handles exact pre-admission retirement,
+without manufacturing an admission or semantic-success receipt.
+
+### Evidence boundaries and cleanup
+
+All six round08 cases issue their probes and continuation together, before
+denial feedback. They demonstrate execution continuing after denial, not a
+new model decision after seeing it. Round07 ACP01 separately demonstrates
+that feedback round trip. Kaimahi/native TCP-case summaries falsely describe
+successful allowed tools; ACP's creation-case explanation incorrectly denies
+kernel coverage. Original summaries remain unchanged. Four native cases
+receive Responses API400 and then succeed through Chat Completions fallback;
+this is not Responses-tool success or another Task attempt.
+
+Nonmutating same-UID/root/mount DAC controls are not outside-cgroup writes.
+Transparent child-program ACP probes establish defense-in-depth, not ordinary
+application-level path confinement. These two scenarios do not requalify
+existing-file mutation, directory mutation, UDP or every child identity.
+They do not repair the historical exact-answer/factual-report failures below.
+
+Exact Task histories and requirements remain; bindings retire and new ACP
+pools are UID-precondition deleted. Coding incarnations terminate, the
+publisher is restored, owned fixtures/listener policies/helpers are removed,
+and protected graphs compare equal. Recorded runtime PID/start absence does
+not imply a separate post-retirement CRI inventory or empty-cgroup inspection.
+The failed round03 ACP's narrower evidence gap is closed by supplementary
+same-boot exact CRI/PID/start/cgroup observations, not by editing its archive.
+
+The same bounded Qwen3-Coder model incarnation serves the current component
+and combined cases. All24 pinned metadata/weight files are verified against
+the public model revision in the manifest. Every new Task passes its original
+18-minute admission window; the last is created before the unchanged cutoff.
+The exact backend is then retired with container absence, inactive owner,
+empty GPU and unchanged protected state. No model restart, deadline extension,
+case resampling or further physical-case authority is inferred.
+
+### Exact-target Linux supplement
+
+Kaimahi's separate synthetic merge `7016c63`, tree `35c7646`, tests EA against
+target `3bca56e`. That target is not an EA ancestor. The accepted supplement
+covers complete affected packages including MCP/localpreview, all93 compiled
+App declarations, typed callers, the Windows contract checker and documentation
+build plus13 Node tests. It is not native Windows or hosted Actions proof.
+
+An earlier unsafe-umask run fails existing private-directory checks and leaves
+two attribution timeouts plus a secondary preview-test panic. Those receipts
+remain. A rejected safe-root preparation retains partial-store markers and
+missing historical objects; its replacement is an explicitly shallow,
+complete required commit/tree snapshot, not complete ancestry. The corrected
+run's MCP variants pass without proving the old timeouts' cause or fixing any
+separately retained baseline diagnostic race.
+
+The original corrected run still records documentation exit127 for missing
+VitePress. Only afterward are locked dependencies restored and the original
+documentation check executed in a separate successful continuation, without
+repeating Go tests. Manifests and tracked source remain unchanged. The large
+bundle warning remains an unsuppressed, nonblocking advisory. No failed
+receipt is rewritten into an all-zero run.
+
+## Historical source and artifacts
+
+The original `projects` in `release-manifest.json` record review baselines/ordered commits and,
 separately, historical qualified trees, original qualified IDs before the
 metadata replacements, CLI/chart hashes and all six locally built image manifest/config digests.
 The five Orka images and Guardd provider were built from the actual fresh
@@ -24,9 +128,11 @@ The lab upgrade preserved all 211 pre-existing protected UID/spec
 fingerprints. The current upstream AgentHost CRDs/schema additions were
 retained, not deleted to make older manifests fit.
 
-## Current Kaimahi review refresh
+<a id="current-kaimahi-review-refresh"></a>
 
-The current Kaimahi review tip is
+## Original Kaimahi review refresh
+
+That original refreshed Kaimahi review tip is
 `019e0de701c1a3ab32149c53dfe08db830b2af94`, based on upstream main
 `3a0ab5695201e088acda79a4f4981f8e40da1cb2`. Six feature patches are
 unchanged. The CLI patch preserves upstream FILE argument/content semantics
